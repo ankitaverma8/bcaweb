@@ -54,7 +54,7 @@ Swal.fire({
         
     Swal.fire({
   title: "Registartion failed",
-  text:data.message,
+  text:"error in code",
   icon: "error",
   confirmButtonText:"Tray again!"
 })
