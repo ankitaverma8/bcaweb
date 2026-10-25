@@ -1,10 +1,15 @@
+sudo apt-get update && sudo apt-get install -y mysql-server
+
+sudo service mysql start
+
+sudo mysql -u root
+
 CREATE USER 'ankita'@'localhost' IDENTIFIED WITH mysql_native_password BY 'ankita';
 
 GRANT ALL PRIVILEGES ON bca.* TO 'ankita'@'localhost';
 
 FLUSH PRIVILEGES;
 
-sudo mysql -u root
 
 
 create database bca;
@@ -16,3 +21,6 @@ insert into user value(1,"Ankita","ankita@gmail.com","123");
 
 select * from user; 
 
+
+
+fix kro sab

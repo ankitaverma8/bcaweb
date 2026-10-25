@@ -13,6 +13,7 @@ db = mysql.connector.connect(
 )
 
 
+
 conn = db.cursor(dictionary=True)
 
 
