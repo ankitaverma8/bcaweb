@@ -76,6 +76,7 @@ if (loginform){
         e.preventDefault();
 
 const user = new FormData(loginform);
+console.log(user)
 try {
     
 
