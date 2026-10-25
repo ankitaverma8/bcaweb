@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCA WEB LOGIN</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://kit.fontawesome.com/4c033a32a0.js" crossorigin="anonymous"></script>
+
+</head>
+
+
+
+<body>
+
+<header>
+    <h1><i class="fa-solid fa-graduation-cap cwhite"></i> BCA WEB PORTAL <i class="fa-solid fa-book-open"></i></h1>
+    <p> Empowering Students,Building Futures.</p>
+</header>
+   
+
+<div class="formcontainer">
+
+    <h3 class="formtitle"><i class="fa-solid fa-circle-user cblue"></i> STUDENT PROFIlE</h3>
+    <form  action="">
+
+<div class="inputfield">
+        <label for="name"><i class="fa-solid fa-user cblue"></i> Name</label>
+        <input value="{{user['name'] }}" readonly type="text" name="name" id="name" placeholder="Full name">
+</div>
+
+<div class="inputfield">
+        <label for="email"><i class="fa-solid fa-envelope cblue"></i> Email</label>
+        <input value="{{user['email'] }}" readonly type="email" name="email" id="eamil" placeholder="Emial id">
+</div>
+
+
+
+<div class="inputfield buttons">
+        <button class="bgreen" type="submit"><i class="fa-solid fa-form  cwhite"></i> DASHBOARD</button>
+
+        <button class="bblue" type="button" onclick="location.href='/logout'"><i class="fa-solid fa-right-to-bracket cwhite"></i> LOGOUT</button>
+</div>
+
+
+    </form>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/static/js/main.js"></script>
+    
+
+</body>
+</html>

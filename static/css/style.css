@@ -1,0 +1,109 @@
+*{
+margin: 0;
+padding: 0;
+}
+
+body{
+    margin: 0;
+    min-height: 100vh;
+    background-attachment: fixed;
+     background-image: linear-gradient(120deg, rgb(171, 171, 226) , rgb(192, 192, 192));
+}
+
+
+header{
+    background-color: rgb(80, 70, 221);
+    margin: 0px;
+    padding: 5px;
+    text-align: center;
+    color: white;
+}
+
+header p{
+    color:rgb(218, 218, 218);
+}
+
+
+.formcontainer{
+   background-color: rgb(255, 255, 255);
+    margin: 50px auto;
+    width: max-content;
+    padding: 20px ;
+    border-radius: 20px;
+    border: 2px solid rgb(223, 219, 212);
+
+}
+
+#msg{
+    display: none;
+    margin-top: 2px;
+    text-align: right;
+    margin: 5px;
+    padding: 10px;
+    z-index: 99999;
+    position:absolute;
+    background-color: aqua;
+    width: max-content;
+}
+
+.formtitle{
+    font-size:x-large;
+    padding: 5px 20px;
+    color: rgb(0, 0, 99);
+}
+
+.stitle{
+    text-align: center;
+}
+
+.inputfield{
+    margin-top: 12px;
+}
+
+.inputfield label{
+    display: block;
+    margin-bottom: 2px;
+}
+
+.inputfield input{
+    width: 94%;
+    height: 20px;
+    border-radius: 5px;
+    border: 1px solid rgb(201, 201, 201);
+    padding: 3px 10px;
+}
+
+.inputfield input:focus{
+    outline: 1px solid rgb(189, 189, 189);
+}
+
+.inputfield button{
+    padding: 5px 15px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    
+}
+
+/* b for backgrond colgroup
+c for font color */
+
+.bblue{
+    background-color: blue;
+    color: white;
+}
+.cblue{
+    color: blue;
+}
+.cwhite{
+    color: white;
+}
+.bgreen{
+    background-color: green;
+    color: white;
+}
