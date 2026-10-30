@@ -28,6 +28,7 @@ if (data.success == false) {
         Swal.fire({
   title: "Registartion failed",
   icon: "error",
+  text:data.message,
   confirmButtonText:"Tray again!"
 })
 }

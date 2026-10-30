@@ -19,8 +19,9 @@ create table user (id int primary key auto_increment,name varchar(50), email var
 
 insert into user value(1,"Ankita","ankita@gmail.com","123");
 
-select * from user; 
+select * from user;  
+
+alter table users
+add constraint unique_email unique(email);
 
 
-
-fix kro sab

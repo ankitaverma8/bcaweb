@@ -61,7 +61,10 @@ def registerapi():
         name = request.form.get("name")
         email = request.form.get("email")
         password = request.form.get("password")
-
+        conn.execute("select * from user where email =%s",[email])
+        user = conn.fetchone()
+        if(user):
+            return jsonify({"success": False,"message":"Invalid email"})
         conn.execute("insert into user (name,email,password) values (%s,%s,%s)",[name,email,password])
         db.commit()
         return jsonify({"success": True, "message": "Authenticated successfully", "name":name, "email":email})
