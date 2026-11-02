@@ -46,6 +46,26 @@
     </form>
 
 </div>
+
+ <div> 
+        <table border="1">
+            <tr>
+                <th>Id</th>
+                <th>Question</th>
+                <th>Difficulty</th>
+            </tr>
+{% for item in questions %}
+    {% if item.id %}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.question }}</td>
+            <td>{{ item.difficulty }}</td>
+        </tr>
+    {% endif %}
+{% endfor %}
+        </table>
+    </div>
+
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/static/js/main.js"></script>
     

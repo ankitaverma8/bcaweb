@@ -43,7 +43,7 @@
 <div class="inputfield buttons">
         <button type="submit" class="bgreen" type="submit"><i class="fa-solid fa-user-plus cwhite"></i>Add Question</button>
 
-        <button class="bblue" type="button" onclick="location.href='/'"><i class="fa-solid fa-right-to-bracket cwhite"></i> LOGIN</button>
+        <button class="bblue" type="button" onclick="location.href='/logout'"><i class="fa-solid fa-right-to-bracket cwhite"></i> Lgout</button>
 </div>
 
 
@@ -52,13 +52,21 @@
 </div>
 
     <div> 
-        <table>
+        <table border="1">
             <tr>
                 <th>Id</th>
                 <th>Question</th>
+                <th>Difficulty</th>
             </tr>
-            <td></td>
-            <td></td>
+{% for item in questions %}
+    {% if item.id %}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.question }}</td>
+            <td>{{ item.difficulty }}</td>
+        </tr>
+    {% endif %}
+{% endfor %}
         </table>
     </div>
 

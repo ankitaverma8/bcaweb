@@ -103,7 +103,9 @@ def home():
         email = session["email"]
         conn.execute("select * from user where email =%s",[email])
         user = conn.fetchone()
-        return render_template("home.html",user=user)
+        conn.execute("select * from questions")
+        questions = conn.fetchall();        
+        return render_template("home.html",user=user,questions=questions)
     return render_template("login.html")
 
 
@@ -136,7 +138,9 @@ def questionsapi():
 
 @app.route("/questions", methods=["GET"])
 def questions():
-    return render_template("questions.html")
+    conn.execute("select * from questions")
+    questions = conn.fetchall();
+    return render_template("questions.html",questions=questions)
 
 
 
