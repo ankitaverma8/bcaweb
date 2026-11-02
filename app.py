@@ -51,6 +51,30 @@ def loginapi():
         return jsonify({"success":False, "message": str(e)})
 
 
+@app.route("/adminlogin", methods=["GET"])
+def adminlogin():
+    return render_template("adminlogin.html")
+
+@app.route("/adminlogin", methods=["POST"])
+def adminloginapi():
+    try:
+        email = request.form.get("email")
+        password = request.form.get("password") 
+        print("api hited")
+        conn.execute("select * from admin where email =%s",[email])
+        admin = conn.fetchone()
+        if(admin):
+            if(admin["password"] == password):
+                session["email"] = admin["email"]
+                return jsonify({"success": True})
+            return jsonify({"success": False, "message": "Wrong email/password"})
+        return jsonify({"success": False, "message": "admin not found"})
+    except Exception as e:
+        print("Error", e)
+        return jsonify({"success":False, "message": str(e)})
+
+
+
 @app.route("/register", methods=["GET"])
 def register():
     return render_template("register.html")
@@ -82,13 +106,43 @@ def home():
         return render_template("home.html",user=user)
     return render_template("login.html")
 
+
+
+@app.route("/adminhome")
+def adminhome():
+    
+    if ('email' in session) :
+        email = session["email"]
+        conn.execute("select * from admin where email =%s",[email])
+        admin = conn.fetchone()
+        return render_template("adminhome.html",admin=admin)
+    return render_template("adminlogin.html")
+
 @app.route("/logout")
 def logout():
     session.clear()
     return redirect("/")
 
+@app.route("/questions", methods=["POST"])
+def questionsapi():
+    try:
+        question = request.form.get("question")
+        difficulty = request.form.get("difficulty")
+        conn.execute("insert into questions (question,difficulty) values (%s,%s)",[question, difficulty])
+        db.commit()
+        return jsonify({"success": True, "message": "Question added successfully"})
+    except mysql.connector.Error as e:
+        return jsonify({"success":False, "message": str(e)})
+
+@app.route("/questions", methods=["GET"])
+def questions():
+    return render_template("questions.html")
+
+
 
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5500, debug=True)
+
+    
     

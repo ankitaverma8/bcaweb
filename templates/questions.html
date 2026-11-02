@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCA WEB LOGIN</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://kit.fontawesome.com/4c033a32a0.js" crossorigin="anonymous"></script>
+</head>
+
+
+
+<body>
+
+<header>
+    <h1><i class="fa-solid fa-graduation-cap cwhite"></i> BCA WEB PORTAL <i class="fa-solid fa-book-open"></i></h1>
+    <p> Empowering Students,Building Futures.</p>
+</header>
+
+   
+
+<div class="formcontainer">
+
+    <h3 class="formtitle"><i class="fa-solid fa-circle-user cblue"></i>QUESTIONS</h3>
+
+    <form id="questionform" method="post">
+
+
+<div class="inputfield">
+        <label for="question"><i class="fa-solid fa-user cblue"></i>Question</label>
+        <input required type="text" name="question" id="question" placeholder="Question">
+</div>
+
+<div class="inputfield">
+        <label for="difficulty"><i class="fa-solid fa-envelope cblue"></i>Difficulty</label>
+        <select name="difficulty" id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+</div>
+
+<div class="inputfield buttons">
+        <button type="submit" class="bgreen" type="submit"><i class="fa-solid fa-user-plus cwhite"></i>Add Question</button>
+
+        <button class="bblue" type="button" onclick="location.href='/'"><i class="fa-solid fa-right-to-bracket cwhite"></i> LOGIN</button>
+</div>
+
+
+    </form>
+
+</div>
+
+    <div> 
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Question</th>
+            </tr>
+            <td></td>
+            <td></td>
+        </table>
+    </div>
+
+</body>
+    <script src="/static/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</html>
