@@ -13,7 +13,7 @@
 <body>
 
 <header>
-    <h1><i class="fa-solid fa-graduation-cap cwhite"></i> BCA WEB PORTAL <i class="fa-solid fa-book-open"></i></h1>
+    <h1><i class="fa-solid fa-graduation-cap cwhite"></i> BCA WEB PORTAL Notice<i class="fa-solid fa-book-open"></i></h1>
     <p> Empowering Students,Building Futures.</p>
 </header>
 
@@ -21,27 +21,27 @@
 
 <div class="formcontainer">
 
-    <h3 class="formtitle"><i class="fa-solid fa-circle-user cblue"></i>QUESTIONS</h3>
+    <h3 class="formtitle"><i class="fa-solid fa-circle-user cblue"></i>Notice</h3>
 
     <form id="questionform" method="post">
 
 
 <div class="inputfield">
-        <label for="question"><i class="fa-solid fa-user cblue"></i>Question</label>
-        <input required type="text" name="question" id="question" placeholder="Question">
+        <label for="question"><i class="fa-solid fa-user cblue"></i>Notice</label>
+        <input required type="text" name="question" id="question" placeholder="Notice">
 </div>
 
 <div class="inputfield">
         <label for="difficulty"><i class="fa-solid fa-envelope cblue"></i>Difficulty</label>
         <select name="difficulty" id="difficulty">
-            <option value="easy">Easy</option>
+            <option value="low">Low</option>
             <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
+            <option value="high">High</option>
         </select>
 </div>
 
 <div class="inputfield buttons">
-        <button type="submit" class="bgreen" type="submit"><i class="fa-solid fa-user-plus cwhite"></i>Add Question</button>
+        <button type="submit" class="bgreen" type="submit"><i class="fa-solid fa-user-plus cwhite"></i>Add Notice</button>
 
         <button class="bblue" type="button" onclick="location.href='/logout'"><i class="fa-solid fa-right-to-bracket cwhite"></i> Lgout</button>
 </div>
@@ -51,24 +51,32 @@
 
 </div>
 
-    <div> 
-        <table border="1">
-            <tr>
-                <th>Id</th>
-                <th>Question</th>
-                <th>Difficulty</th>
-            </tr>
-{% for item in questions %}
-    {% if item.id %}
-        <tr>
-            <td>{{ item.id }}</td>
-            <td>{{ item.question }}</td>
-            <td>{{ item.difficulty }}</td>
-        </tr>
-    {% endif %}
-{% endfor %}
+<div style="margin: 0; min-height: 100vh; background-attachment: fixed; background-image: linear-gradient(120deg, rgb(171, 171, 226), rgb(192, 192, 192)); padding: 20px;">
+    <div style="background-color: rgb(255, 255, 255); margin: 50px auto; width: max-content; padding: 20px; border-radius: 20px; border: 2px solid rgb(223, 219, 212);">
+        <table style="border-collapse: collapse; width: 100%;">
+            <thead>
+                <tr>
+                    <th style="padding: 10px; border: 1px solid rgb(201, 201, 201);">No.</th>
+                    <th style="padding: 10px; border: 1px solid rgb(201, 201, 201);">Date</th>
+                    <th style="padding: 10px; border: 1px solid rgb(201, 201, 201);">Notice</th>
+                    <th style="padding: 10px; border: 1px solid rgb(201, 201, 201);">Urgency</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in questions %}
+                    {% if item.id %}
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid rgb(201, 201, 201);">{{ item.id }}</td>
+                            <td style="padding: 10px; border: 1px solid rgb(201, 201, 201);">{{ item.notice_date }}</td>
+                            <td style="padding: 10px; border: 1px solid rgb(201, 201, 201);">{{ item.question }}</td>
+                            <td style="padding: 10px; border: 1px solid rgb(201, 201, 201);">{{ item.difficulty }}</td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            </tbody>
         </table>
     </div>
+</div>
 
 </body>
     <script src="/static/js/main.js"></script>
